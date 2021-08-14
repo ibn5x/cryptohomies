@@ -1,6 +1,9 @@
- // Application id 
- //Server url
 
+ // Application id 
+//Server url
+
+
+ 
 
 init = async () => {
     $('#profileInfo').hide();
@@ -9,12 +12,11 @@ init = async () => {
 
  login = async() => {
 
-    //check for the current user
      var user = await Moralis.User.current();
      
      if(!user){
          var user = await Moralis.Web3.authenticate();
-         alert("you have been logged in");
+         $('#goodLogin').show();
      }
    
      if(user){
@@ -28,7 +30,6 @@ init = async () => {
 
 }
 
-//merger multiple address to one user
 Moralis.Web3.onAccountsChanged( async ([accounts]) => {
     
     const confirmed = confirm("You are about to Link this address to your account, do you want too?");
@@ -61,7 +62,7 @@ saveUserInfo = async() => {
     
     if(!user){
         alert("You must login first with either your email and password or connect with wallet");
- 
+        $('#loginInform').show();
     }else{
 
         
@@ -80,46 +81,26 @@ saveUserInfo = async() => {
     }
    
     await user.save();
-    console.log("data saved");
-    
-    logout();
-    alert("profile information saved, log back in to see changes");
-    }
    
+    logout();
+    $('#profileInform').show();
+    }  
 
 }
 
-/*
-openProfile = async () => {
-
-  let  user = await Moralis.User.current();
-
-    if(user){
-        const email = user.get('email');
-        if(email)
-        {
-            email.value = email;
-            console.log("check a");
-        }else{
-            email.value = "";
-            console.log("check b");
-        }
-    }
-}
-*/
 
 
 
 
 
-//helper methods
+
 let hideElement = (element) => element.style.display = "none";
 let showElement = (element) => element.style.display = "block";
 
-//const proBtn = document.getElementById('profileBtn');
+
 
 
 
 
 init();
-//openProfile();    
+ 
