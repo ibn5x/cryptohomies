@@ -1,5 +1,6 @@
-Moralis.initialize("WnFraApVz9nmlo3yNFTSPPtQfHeR6sBJkC8mNpA4"); // Application id 
-Moralis.serverURL = "https://lx6z3lly3dnp.moralisweb3.com:2053/server"; //Server url
+ // Application id 
+ //Server url
+
 
 init = async () => {
     $('#profileInfo').hide();
