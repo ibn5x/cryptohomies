@@ -75,6 +75,39 @@
   }
 }
 
+#login_btn {
+  margin-right: 5px;
+}
+
+
+/** Drops start **/
+
+.collection {
+ margin-left: 40%;
+}
+
+
+
+
+
+
+/** Drops End **/
+
+
+.signupBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#signup{
+  width: 400px;
+  padding: 10px 10px 10px 10px;
+  background-color: lightgrey;
+  border-radius: 10px;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
